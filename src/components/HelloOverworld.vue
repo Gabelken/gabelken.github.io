@@ -19,8 +19,8 @@
         </p>
         <img src="../assets/HelloOverworld/schematic.jpg" style="width:75%; align-self: center"/>
         <div class="inline">
-            <p><B>Try it yourself:   </B></p>
-            <a href="../assets/HelloOverworld/HelloOverworld.zip" download>Download the Code</a>
+            <p style="margin-right: 4px"><B>Check out the code </B></p>
+            <a href="https://github.com/Gabelken/HelloOverworld/blob/master/HelloOverworld.ino">here</a>
         </div>
         <div class="inline" style="align-content: flex-start">
             <img src="../assets/HelloOverworld/concept-sketch.jpg" style="height: 400px"/>
