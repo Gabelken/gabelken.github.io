@@ -1,79 +1,175 @@
 <template>
     <div class="entry">
         <h1>Distraction-Free Reading Glasses</h1>
+        <iframe class="video"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/WNfFNtUU-BQ"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         <p>
-            Welcome to <i>Hello Overworld:The Adventures of Blink!</i>
+            Some of my earliest memories are of trips to the library, followed by cozying up at home together to read.
+            <br/><br/>
+            Distraction-free reading glasses are a project inspired by my parents, who have always loved reading but never seem to catch a break.
+            As small business owners, no day seems to go by without at least a few phone calls.
+            So I wanted to find a way to give a moment's respite as they read.
+            <br/><br/>
+            My parents use reading glasses, so what if we could set their phones to 'Do No Disturb' whenever they put them on?
         </p>
-        <div class="inline" style="margin: 60px">
-            <img src="../../../assets/HelloOverworld/overview-0.jpg" style="width: 30%; transform: rotate(90deg)"/>
-            <img src="../../../assets/HelloOverworld/lit-house-top.jpg" style="width: 30%; transform: rotate(90deg)"/>
-            <img src="../../../assets/HelloOverworld/Swimming.jpg" style="width: 30%; transform: rotate(90deg)"/>
+        <div class="space-around inline" >
+            <img class="inline" src="../../../assets/ReadingGlassesPlus/final-front.jpg"/>
+            <img class="inline" src="../../../assets/ReadingGlassesPlus/App.png"/>
+            <img class="inline" src="../../../assets/ReadingGlassesPlus/final-back.jpg"/>
         </div>
-        <p style="margin: 15px">
-            Travel across the 5x5 overworld map as Blink, the hero of Light, on his journey across the great plain.
-            <br/>
-            Hello Overworld is a 2D matrix 'game' where you as the player can move a blinking LED across the an overworld-style map. A player can interact with the world by moving into 3d areas of the map.
-            <br/>
-            <br/>
-            The console consists of 2 main parts - a 5x5 LED matrix and a'D' pad made up of a cut-out overlaying 4 directional buttons.
+        <p>
+            But when I checked in with my parents for some ad-hoc requirements gathering, I discovered there was another pitfall to their reading - eye strain.
+            Lately, neither had been reading much, as it was getting hard on their eyes.
+            <br/><br/>
+            So the glasses needed to do 2 things - create a quiet environment and brighten reading material.
         </p>
-        <img src="../../../assets/HelloOverworld/schematic.jpg" style="width:75%; align-self: center"/>
-        <div class="inline">
-            <p style="margin-right: 4px"><B>Check out the code </B></p>
-            <a href="https://github.com/Gabelken/HelloOverworld/blob/master/HelloOverworld.ino">here</a>
-        </div>
+
+        <PhotoCardViewer :carouselImages="carouselImages"></PhotoCardViewer>
+
         <div class="inline" style="align-content: flex-start">
-            <img src="../../../assets/HelloOverworld/concept-sketch.jpg" style="height: 400px"/>
-            <p style="margin: 16px">
-                The original idea behind this app was to create a maze, but as setup and tests of the led matrix ended up taking quite some time,
-                the project was scaled down to minimize coding overhead.
-                <br/><br/>
-                In the end, I think the overworld concept ended up being fun and probably less painful for a user than a maze with invisible walls.
-                It was also a lot of fun to build the components such as the tiny house to represent a village.
-                <br/><br/>
-                Given more time, I'd like to add blinking 'cutscenes' for the user on entering specific parts of the map to make it feel more interactive
-                and possibly a 'Dungeon' in the top corner with a more complex cutscene programmed on an rgb LED.
-            </p>
-
-            <img src="../../../assets/HelloOverworld/button-move-tests.jpg" style="width: 400px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img class="inline" src="../../../assets/ReadingGlassesPlus/model-1.jpg"/>
+            <div>
+                <h2>How do they Work?</h2>
+                <p style="margin: 16px">
+                    Putting the glasses on signals the Arduino to start working via a pressure sensor in the nose pads.
+                    From there, the glasses will react to the environment.
+                    <br/><br/>
+                    If the lighting is dim, LEDs at the corners of the glasses shine on whatever the user is looking at.
+                    If the lighting gets even dimmer, the LEDs will brighten to compensate based on readings from a photocell at the bridge of the nose.
+                    <br/><br/>
+                    The glasses may also be paired to an Android app that can silence the user's phone.
+                    Once paired and enabled, 'Do Not Disturb' mode is turned on when the glasses are worn and turned off when the glasses are removed.
+                    Pairing may occur at any point, as the app will send a signal to the Arduino each time it connects, asking for the current state.
+                    After that, the Arduino will resend the state after any changes.
+                </p>
+            </div>
         </div>
 
+        <h2>The Setup</h2>
+        <img src="../../../assets/ReadingGlassesPlus/schem.png" style="width:75%; align-self: center"/>
+        <p><i>NOTE: 100Ohm resistors in the diagram are actually 1KOhm</i></p>
         <div class="inline">
-            <img src="../../../assets/HelloOverworld/2d-button-tests.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../../../assets/HelloOverworld/Testing-grid.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../../../assets/HelloOverworld/laying-wire.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../../../assets/HelloOverworld/cutting-out-a-house.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <p style="margin-right: 4px"><B>Check out the repository </B></p>
+            <a href="https://github.com/Gabelken/Distraction-Free-Reading-Glasses">here</a>
         </div>
 
-
-
-        <h2>See it in Action</h2>
-        <video width="320px"  controls>
-            <source src="../../../assets/HelloOverworld/demo.mp4" type="video/mp4">
-            Your browser does not support the video tag. Please try opening in a modern browser.
-        </video>
 
         <h2>References</h2>
-        <ul>
-            <li>
-                <a href="https://www.arduino.cc/reference/en/">Arduino Documentation</a>
-            </li>
-            <li>
-                <a href="https://www.elegoo.com/download/">"Elegoo Mega 2560 The Most Complete Stater Kit" User Manual and Tutorials</a>
-            </li>
-            <li>
-                <a href="https://www.circuitspecialists.com/blog/8x8-led-matrix-beating-heart-tutorial/">8x8 LED Matrix - Beating Heart Tutorial</a>
-            </li>
-            <li>
-                <a href="https://www.circuitspecialists.com/blog/build-8x8-led-matrix/">How to Make an 8x8 LED Matrix</a>
-            </li>
-        </ul>
+        <p><b>Arduino</b></p>
+        <a href="https://www.arduino.cc/reference/en/">Arduino Documentation</a>
+        <a href="https://www.elegoo.com/download/">"Elegoo Mega 2560 The Most Complete Stater Kit" User Manual and Tutorials</a>
+        <a href="http://paulmurraycbr.github.io/ArduinoTheOOWay.html">Arduino the Object Oriented Way</a>
+        <a href="https://forum.arduino.cc/index.php?topic=65095.0">Callback Functions</a>
+
+        <p><b><br/>Android</b></p>
+        <a href="https://www.youtube.com/watch?v=Oz4CBHrxMMs">Kotlin 101: How to Communicate to a Bluetooth Device Part 1</a>
+        <a href="https://www.youtube.com/watch?v=eg-t_rhDSoM">Kotlin 101: How to Communicate to a Bluetooth Device Part 2</a>
+        <a href="https://github.com/HarryGoodwin/Arduino-Android-Sensors">Arduino-Android Sensors Bluetooth Example</a>
+        <a href="https://developer.android.com/reference/kotlin/android/bluetooth/BluetoothAdapter">Bluetooth Adapter Documentation</a>
+        <a href="https://android--code.blogspot.com/2018/04/android-kotlin-turn-on-of-do-not.html">Programmatic Do Not Disturb Tutorial</a>
+
+        <h3>A Special Thanks to my Mum for Being my Model and Actress &hearts;</h3>
     </div>
 </template>
 
 <script>
+    import PhotoCardViewer from "../../PhotoCardViewer";
     export default {
-        name: "HelloOverworld"
+        name: "HelloOverworld",
+        components: {
+            PhotoCardViewer,
+        },
+        data() {
+            return {
+                carouselImages: [
+                    {
+                        id: 0,
+                        src: "ReadingGlassesPlus/idea-sketch.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 1,
+                        src: "ReadingGlassesPlus/arm-mechanism.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 2,
+                        src: "ReadingGlassesPlus/test-wiring.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 3,
+                        src: "ReadingGlassesPlus/test-notches.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 4,
+                        src: "ReadingGlassesPlus/fitting-components-1.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 5,
+                        src: "ReadingGlassesPlus/fitting-components-2.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 6,
+                        src: "ReadingGlassesPlus/pressure-sensor.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 7,
+                        src: "ReadingGlassesPlus/pressure-sensor-nose-piece.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 8,
+                        src: "ReadingGlassesPlus/testing-the-pressure-nose-piece.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 9,
+                        src: "ReadingGlassesPlus/directing-light-1.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 10,
+                        src: "ReadingGlassesPlus/directing-light-2.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 11,
+                        src: "ReadingGlassesPlus/wire-planning.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 12,
+                        src: "ReadingGlassesPlus/soldering-ground.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 13,
+                        src: "ReadingGlassesPlus/soldering-data-lines.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 14,
+                        src: "ReadingGlassesPlus/final-back.jpg",
+                        isPortrait: false
+                    },
+                    {
+                        id: 14,
+                        src: "ReadingGlassesPlus/model-card.jpg",
+                        isPortrait: false
+                    }
+                ]
+            }
+        }
     }
 </script>
 
@@ -86,7 +182,7 @@
         display: flex;
         flex-direction: column;
         align-content: center;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     div.inline {
         color: #333943;
@@ -94,7 +190,21 @@
         flex-direction: row;
         align-content: flex-start;
         justify-content: center;
-        margin: 16px;
+        margin: 3em;
+    }
+    div.space-around {
+        justify-content: space-around;
+    }
+    img.inline {
+        max-width: 30%;
+        max-height: 25em;
+        object-fit: contain;
+    }
+    img.inline-rotated {
+        max-height: 30%;
+        max-width: 25em;
+        object-fit: contain;
+        transform: rotate(90deg);
     }
     h1 {
         padding: 12px;
@@ -102,8 +212,13 @@
     h2 {
         padding: 12px;
     }
-    video {
+    h3 {
+        margin: 2em;
+        color: darkmagenta;
+    }
+    .video {
         align-self: center;
+        margin: 2em 0;
     }
 
 </style>

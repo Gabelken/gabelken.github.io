@@ -24,17 +24,14 @@
 </script>
 
 <style scoped>
-    div {
-        margin-top: 16px;
-        margin-bottom: 16px;
-        align-content: center;
-        justify-content: center;
+    div.portfolio {
+        margin: 16px 5%;
         min-height: border-box;
-        height: 100%;
     }
     div.card-viewer {
         display: flex;
         justify-content: center;
-        align-items:center;
+        align-content: center;
+        width: 100%;
     }
 </style>

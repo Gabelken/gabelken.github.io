@@ -1,7 +1,9 @@
 <template>
     <router-link :to="to">
         <div class="card" v-bind:style="{ backgroundImage: 'url(' + require(`@/assets/${src}`) + ')' }">
-            <h1>{{title}}</h1>
+            <div class="txt-container">
+                <h1>{{title}}</h1>
+            </div>
             <div class="overlay">
             </div>
         </div>
@@ -25,18 +27,12 @@
             alt: {
                 type: String,
                 required: true,
-                default: "SOS"
+                default: ""
             },
             to: {
                 type: String,
                 required: true,
                 default: '/'
-            }
-        },
-        methods: {
-            resolve_img_url: function (path) {
-                let images = require.context('../assets/', false, /\.png$|\.jpg$/)
-                return images("./"+path)
             }
         }
     }
@@ -52,28 +48,36 @@
         align-items: center;
         width: 20em;
         height: 15em;
-        max-width: 75%;
-        max-height: 83%;
         margin: 0.85em;
         padding: 0.5em;
         border-radius: 1em;
         top: 0;
-        transition: height;
     }
     .overlay {
-        background-color: #ebebeb;
-        opacity: 0.5;
+         background-color: #ebebeb;
+         opacity: 0.5;
+         width: 100%;
+         height: 3em;
+         border-radius: 0 0 1em 1em;
+         position: absolute;
+         bottom: 0;
+         margin:0;
+     }
+    .txt-container {
         width: 100%;
         height: 3em;
-        border-radius: 0 0 1em 1em;
         position: absolute;
         bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:0;
     }
     h1 {
         color: #333943;
-        font-size: 1.5em;
+        font-size: 1em;
         opacity: 1;
-        z-index: 1;
     }
 
 </style>
