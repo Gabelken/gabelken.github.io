@@ -12,15 +12,30 @@ import App from './App.vue'
 
 Vue.config.productionTip = false;
 
-import Home from "./components/Home";
-import HelloOverworld from "./components/HelloOverworld";
+import Home from "./components/MainPages/Home";
+import Portfolio from "./components/MainPages/Portfolio";
+import HelloOverworld from "./components/PortfolioPages/Arduino/HelloOverworld";
 
 const routes = [
-  { path: '/home', component: Home},
-  { path: '/portfolio/hello-overworld', component: HelloOverworld }
+  {
+      path: '/',
+      name: 'home',
+      component: Home
+  },
+  {
+      path: '/portfolio/:cardset',
+      name: 'portfolio',
+      component: Portfolio
+  },
+  {
+      path: '/portfolio/arduino/hello-overworld',
+      name: 'hello-overworld',
+      component: HelloOverworld
+  }
 ];
 const router = new VueRouter({
-  routes
+    mode: "history",
+    routes: routes
 });
 router.push('/home');
 

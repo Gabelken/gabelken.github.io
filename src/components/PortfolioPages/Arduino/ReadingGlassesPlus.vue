@@ -1,13 +1,13 @@
 <template>
     <div class="entry">
-        <h1>Hello Overworld</h1>
+        <h1>Distraction-Free Reading Glasses</h1>
         <p>
             Welcome to <i>Hello Overworld:The Adventures of Blink!</i>
         </p>
         <div class="inline" style="margin: 60px">
-            <img src="../assets/HelloOverworld/overview-0.jpg" style="width: 30%; transform: rotate(90deg)"/>
-            <img src="../assets/HelloOverworld/lit-house-top.jpg" style="width: 30%; transform: rotate(90deg"/>
-            <img src="../assets/HelloOverworld/Swimming.jpg" style="width: 30%; transform: rotate(90deg)"/>
+            <img src="../../../assets/HelloOverworld/overview-0.jpg" style="width: 30%; transform: rotate(90deg)"/>
+            <img src="../../../assets/HelloOverworld/lit-house-top.jpg" style="width: 30%; transform: rotate(90deg)"/>
+            <img src="../../../assets/HelloOverworld/Swimming.jpg" style="width: 30%; transform: rotate(90deg)"/>
         </div>
         <p style="margin: 15px">
             Travel across the 5x5 overworld map as Blink, the hero of Light, on his journey across the great plain.
@@ -17,13 +17,13 @@
             <br/>
             The console consists of 2 main parts - a 5x5 LED matrix and a'D' pad made up of a cut-out overlaying 4 directional buttons.
         </p>
-        <img src="../assets/HelloOverworld/schematic.jpg" style="width:75%; align-self: center"/>
+        <img src="../../../assets/HelloOverworld/schematic.jpg" style="width:75%; align-self: center"/>
         <div class="inline">
             <p style="margin-right: 4px"><B>Check out the code </B></p>
             <a href="https://github.com/Gabelken/HelloOverworld/blob/master/HelloOverworld.ino">here</a>
         </div>
         <div class="inline" style="align-content: flex-start">
-            <img src="../assets/HelloOverworld/concept-sketch.jpg" style="height: 400px"/>
+            <img src="../../../assets/HelloOverworld/concept-sketch.jpg" style="height: 400px"/>
             <p style="margin: 16px">
                 The original idea behind this app was to create a maze, but as setup and tests of the led matrix ended up taking quite some time,
                 the project was scaled down to minimize coding overhead.
@@ -35,21 +35,21 @@
                 and possibly a 'Dungeon' in the top corner with a more complex cutscene programmed on an rgb LED.
             </p>
 
-            <img src="../assets/HelloOverworld/button-move-tests.jpg" style="width: 400px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img src="../../../assets/HelloOverworld/button-move-tests.jpg" style="width: 400px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
         </div>
 
         <div class="inline">
-            <img src="../assets/HelloOverworld/2d-button-tests.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../assets/HelloOverworld/Testing-grid.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../assets/HelloOverworld/laying-wire.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
-            <img src="../assets/HelloOverworld/cutting-out-a-house.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img src="../../../assets/HelloOverworld/2d-button-tests.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img src="../../../assets/HelloOverworld/Testing-grid.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img src="../../../assets/HelloOverworld/laying-wire.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
+            <img src="../../../assets/HelloOverworld/cutting-out-a-house.jpg" style="width:  300px; transform: rotate(90deg); margin-top: 40px; margin-bottom: 40px"/>
         </div>
 
 
 
         <h2>See it in Action</h2>
         <video width="320px"  controls>
-            <source src="../assets/HelloOverworld/demo.mp4" type="video/mp4">
+            <source src="../../../assets/HelloOverworld/demo.mp4" type="video/mp4">
             Your browser does not support the video tag. Please try opening in a modern browser.
         </video>
 
